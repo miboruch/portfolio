@@ -21,7 +21,7 @@ module.exports = {
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'no-unused-vars': 'error',
+    'no-unused-vars': 'warn',
     'no-console': 'warn',
     'react/prop-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',

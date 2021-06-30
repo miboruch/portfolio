@@ -11,6 +11,7 @@
     "@types/prettier": "^2.3.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.10",
     "eslint-plugin-unused-imports": "^1.1.1",
     "formik": "^2.2.9",
     "gsap": "^3.7.0",
