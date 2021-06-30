@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
   body{
     font-size: 1.6rem;
-    color: #fff;
+    color: #000;
     font-family: 'Futura', sans-serif;
     font-weight: 400;
   }
