@@ -12,9 +12,11 @@ import {
 
 interface Props {
   currentProject: number;
+  handleNextSlide: () => void;
+  handlePrevSlide: () => void;
 }
 
-const SliderController: React.FC<Props> = ({ currentProject }) => {
+const SliderController: React.FC<Props> = ({ currentProject, handleNextSlide, handlePrevSlide }) => {
   return (
     <ProjectContent>
       <div>
@@ -22,10 +24,10 @@ const SliderController: React.FC<Props> = ({ currentProject }) => {
         <NextProjectName>Test</NextProjectName>
       </div>
       <FlexWrapper>
-        <ArrowButton>
+        <ArrowButton onClick={handlePrevSlide}>
           <LeftArrow />
         </ArrowButton>
-        <ArrowButton>
+        <ArrowButton onClick={handleNextSlide}>
           <RightArrow />
         </ArrowButton>
       </FlexWrapper>

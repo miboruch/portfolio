@@ -23,6 +23,13 @@ const LogoSquare = styled(LogoSquareIcon)`
 const Arrow = styled(ArrowIcon)`
   width: 70px;
   cursor: pointer;
+  stroke: #fff;
+  fill: #fff;
+
+  ${({ theme }) => theme.mq.quadHd} {
+    stroke: #000;
+    fill: #000;
+  }
 `;
 
 export { maxLengthParagraph, Logo, LogoSquare, Arrow };

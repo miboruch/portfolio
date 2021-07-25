@@ -6,7 +6,11 @@ const ProjectData = styled.div`
   background-color: transparent;
   z-index: 2;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+
+  ${({ theme }) => theme.mq.quadHd} {
+    overflow: visible;
+  }
 `;
 
 const Image = styled.img`

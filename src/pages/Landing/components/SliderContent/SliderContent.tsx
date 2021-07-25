@@ -1,5 +1,5 @@
 import React from 'react';
-import { Settings } from 'react-slick';
+import Slider, { Settings } from 'react-slick';
 
 import ProjectInfo from './components/ProjectInfo/ProjectInfo';
 import { projectData } from 'static/project-data';
@@ -20,18 +20,19 @@ const settings: Settings = {
   cssEase: 'cubic-bezier(.84, 0, .08, .99)'
 };
 
-const SliderContent: React.FC<Props> = ({ setCurrentProject }) => {
+const SliderContent = React.forwardRef<Slider, Props>(({ setCurrentProject }, ref) => {
+  const beforeChange = (oldIndex: number, nextIndex: number) => setCurrentProject(nextIndex);
+  const afterChange = (currentIndex: number) => setCurrentProject(currentIndex);
+
   return (
-    <StyledSlider
-      {...settings}
-      beforeChange={(oldIndex, nextSlide) => setCurrentProject(nextSlide)}
-      afterChange={(current) => setCurrentProject(current)}
-    >
+    <StyledSlider {...settings} ref={ref} beforeChange={beforeChange} afterChange={afterChange}>
       {projectData.map((project) => (
         <ProjectInfo key={project.id} project={project} />
       ))}
     </StyledSlider>
   );
-};
+});
+
+SliderContent.displayName = 'SliderContent';
 
 export default SliderContent;

@@ -6,12 +6,14 @@ import { Wrapper } from './footer.styles';
 
 interface Props {
   currentProject: number;
+  handleNextSlide: () => void;
+  handlePrevSlide: () => void;
 }
 
-const Footer: React.FC<Props> = ({ currentProject }) => {
+const Footer: React.FC<Props> = (props) => {
   return (
     <Wrapper>
-      <SliderController currentProject={currentProject} />
+      <SliderController {...props} />
       {/*TODO: social links*/}
     </Wrapper>
   );
