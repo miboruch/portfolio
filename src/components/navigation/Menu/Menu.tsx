@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 
+import { Hamburger } from 'components/index';
 import { useWindowDimensions } from 'components/hooks';
 
 import { MenuBox, MenuWrapper, Text } from './menu.styles';
@@ -22,7 +23,8 @@ const Menu: React.FC<Props> = ({ isOpen, toggleMenu }) => {
   return (
     <>
       <MenuBox onClick={toggleMenu}>
-        <Text>Test</Text>
+        <Text>Web design & code</Text>
+        <Hamburger isOpen={isOpen} />
       </MenuBox>
       <MenuWrapper isOpen={isOpen} scaleX={scales.x} scaleY={scales.y}>
         <p>Projects</p>

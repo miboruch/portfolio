@@ -42,7 +42,12 @@ const MenuWrapper = styled.div<MenuProps>`
 `;
 
 const Text = styled.p`
+  font-size: 12px;
   color: #fff;
+  padding-left: 2rem;
+  margin: auto 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 `;
 
 export { MenuBox, MenuWrapper, Text };
