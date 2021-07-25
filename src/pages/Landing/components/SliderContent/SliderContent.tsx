@@ -7,7 +7,6 @@ import { projectData } from 'static/project-data';
 import { StyledSlider } from './slider-content.styles';
 
 interface Props {
-  currentProject: number;
   setCurrentProject: React.Dispatch<React.SetStateAction<number>>;
 }
 
@@ -21,7 +20,7 @@ const settings: Settings = {
   cssEase: 'cubic-bezier(.84, 0, .08, .99)'
 };
 
-const SliderContent: React.FC<Props> = ({ currentProject, setCurrentProject }) => {
+const SliderContent: React.FC<Props> = ({ setCurrentProject }) => {
   return (
     <StyledSlider
       {...settings}
