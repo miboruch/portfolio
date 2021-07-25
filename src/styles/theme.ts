@@ -40,6 +40,7 @@ export const theme = {
   colors: {
     white: '#fff',
     black: '#000',
-    background: '#212121'
+    background: '#212121',
+    menuBackground: '#272727'
   }
 };
