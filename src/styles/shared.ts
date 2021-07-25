@@ -1,4 +1,8 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import { ReactComponent as LogoIcon } from 'assets/icons/logo.svg';
+import { ReactComponent as LogoSquareIcon } from 'assets/icons/logo-square.svg';
+import { ReactComponent as ArrowIcon } from 'assets/icons/arrow.svg';
 
 const maxLengthParagraph = (length: number) => css`
   white-space: nowrap;
@@ -7,4 +11,18 @@ const maxLengthParagraph = (length: number) => css`
   max-width: ${length}px;
 `;
 
-export { maxLengthParagraph };
+const Logo = styled(LogoIcon)`
+  width: 150px;
+  cursor: pointer;
+`;
+
+const LogoSquare = styled(LogoSquareIcon)`
+  width: 80px;
+`;
+
+const Arrow = styled(ArrowIcon)`
+  width: 70px;
+  cursor: pointer;
+`;
+
+export { maxLengthParagraph, Logo, LogoSquare, Arrow };

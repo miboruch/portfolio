@@ -12,6 +12,7 @@ export const breakpoints: Breakpoints = {
   mobile: 340,
   tabletS: 512,
   tablet: 710,
+  tabletL: 812,
   standard: 1024,
   hdReady: 1280,
   quadHd: 1440,

@@ -38,7 +38,6 @@ const Content = styled.div`
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   padding: 4rem;
   text-align: center;
   z-index: 3;
@@ -48,6 +47,7 @@ const Content = styled.div`
     left: 550px;
     padding: 0;
     text-align: left;
+    gap: 2rem;
   }
 `;
 
@@ -65,10 +65,12 @@ const ProjectName = styled.h2`
 const Description = styled.p`
   color: #fff;
   font-size: 18px;
+  margin-bottom: 3rem;
 
   ${({ theme }) => theme.mq.quadHd} {
     max-width: 400px;
     word-wrap: break-word;
+    margin-bottom: 0;
   }
 `;
 

@@ -19,7 +19,7 @@ const MenuBox = styled.div`
   align-items: center;
   padding: 0 1rem;
   cursor: pointer;
-  z-index: 12;
+  z-index: 21;
 `;
 
 const MenuWrapper = styled.div<MenuProps>`
@@ -32,6 +32,7 @@ const MenuWrapper = styled.div<MenuProps>`
   transform: scale(${({ scaleX, scaleY }) => `${scaleX}, ${scaleY}`});
   transition: transform 0.5s ease, outline-width 0.2s 0.5s ease;
   transform-origin: top right;
+  z-index: 20;
 
   ${({ isOpen }) =>
     isOpen &&

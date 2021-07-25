@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import { Menu } from 'components/index';
 
-import { StyledHeader } from './header.styles';
+import { Logo } from 'styles';
+import { StyledHeader, FlexWrapper } from './header.styles';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
@@ -11,7 +12,11 @@ const Header: React.FC = () => {
 
   return (
     <StyledHeader>
-      <p>Michał Boruch</p>
+      <Logo />
+      <FlexWrapper>
+        <p>Kraków, Polska</p>
+        <p>+48 783 271 883</p>
+      </FlexWrapper>
       <Menu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </StyledHeader>
   );
