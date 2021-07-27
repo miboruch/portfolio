@@ -1,9 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback, useState } from 'react';
 
+import MenuItem from './components/MenuItem/MenuItem';
 import { Hamburger } from 'components/index';
 import { useWindowDimensions } from 'components/hooks';
+import { menuItems } from './menu-items';
 
 import { MenuBox, MenuWrapper, Text } from './menu.styles';
+
+type ButtonSize = {
+  width: number;
+  height: number;
+};
 
 interface Props {
   isOpen: boolean;
@@ -13,22 +20,35 @@ interface Props {
 const Menu: React.FC<Props> = ({ isOpen, toggleMenu }) => {
   const { width, height } = useWindowDimensions();
 
+  const [menuButtonSize, setMenuButtonSize] = useState<ButtonSize>({ width: 0, height: 0 });
+
+  const handleCurrentSize = useCallback(
+    (node: HTMLDivElement | null) => {
+      if (node) {
+        const { width, height } = node.getBoundingClientRect();
+        setMenuButtonSize({ width, height });
+      }
+    },
+    [width]
+  );
+
   const scales = useMemo(() => {
-    const x = 355 / width;
-    const y = 60 / height;
+    const x = menuButtonSize.width / width;
+    const y = menuButtonSize.height / height;
 
     return { x, y };
-  }, [width, height]);
+  }, [width, height, menuButtonSize]);
 
   return (
     <>
-      <MenuBox onClick={toggleMenu}>
+      <MenuBox onClick={toggleMenu} ref={handleCurrentSize}>
         <Text>Web design & code</Text>
         <Hamburger isOpen={isOpen} />
       </MenuBox>
       <MenuWrapper isOpen={isOpen} scaleX={scales.x} scaleY={scales.y}>
-        <p>Projects</p>
-        <p>About me</p>
+        {menuItems.map(({ name, link }) => (
+          <MenuItem key={name} name={name} link={link} />
+        ))}
       </MenuWrapper>
     </>
   );

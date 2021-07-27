@@ -13,11 +13,15 @@ const StyledHamburger = styled.button`
   z-index: 901;
   position: absolute;
   top: 50%;
-  right: 1rem;
+  right: 0;
   transform: translateY(-50%);
 
   :focus {
     outline: none;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    right: 1rem;
   }
 `;
 

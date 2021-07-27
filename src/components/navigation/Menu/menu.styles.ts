@@ -10,16 +10,24 @@ const MenuBox = styled.div`
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
-  width: 360px;
+  width: 200px;
   height: 65px;
   background-color: ${({ theme }) => theme.colors.menuBackground};
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
   cursor: pointer;
   z-index: 21;
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: 300px;
+    height: 65px;
+  }
+
+  ${({ theme }) => theme.mq.hdReady} {
+    width: 365px;
+    margin-left: 3rem;
+  }
 `;
 
 const MenuWrapper = styled.div<MenuProps>`
@@ -49,6 +57,16 @@ const Text = styled.p`
   margin: auto 0;
   text-transform: uppercase;
   letter-spacing: 2px;
+  max-width: 120px;
+  text-align: right;
+
+  ${({ theme }) => theme.mq.tablet} {
+    max-width: unset;
+  }
+
+  ${({ theme }) => theme.mq.hdReady} {
+    padding-left: 4rem;
+  }
 `;
 
 export { MenuBox, MenuWrapper, Text };
