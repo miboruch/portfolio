@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.footer`
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
   height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  z-index: 12;
 `;
 
 export { Wrapper };

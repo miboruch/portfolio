@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SocialLinks from './components/SocialLinks/SocialLinks';
 import SliderController from './components/SliderController/SliderController';
 
 import { Wrapper } from './footer.styles';
@@ -14,7 +15,7 @@ const Footer: React.FC<Props> = (props) => {
   return (
     <Wrapper>
       <SliderController {...props} />
-      {/*TODO: social links*/}
+      <SocialLinks />
     </Wrapper>
   );
 };
