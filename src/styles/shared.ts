@@ -11,13 +11,23 @@ const maxLengthParagraph = (length: number) => css`
   max-width: ${length}px;
 `;
 
-const Logo = styled(LogoIcon)`
+const DesktopLogo = styled(LogoIcon)`
   width: 150px;
   cursor: pointer;
+  display: none;
+
+  ${({ theme }) => theme.mq.tabletS} {
+    display: block;
+  }
 `;
 
-const LogoSquare = styled(LogoSquareIcon)`
+const MobileLogo = styled(LogoSquareIcon)`
   width: 80px;
+  display: block;
+
+  ${({ theme }) => theme.mq.tabletS} {
+    display: none;
+  }
 `;
 
 const Arrow = styled(ArrowIcon)`
@@ -32,4 +42,4 @@ const Arrow = styled(ArrowIcon)`
   }
 `;
 
-export { maxLengthParagraph, Logo, LogoSquare, Arrow };
+export { maxLengthParagraph, DesktopLogo, MobileLogo, Arrow };

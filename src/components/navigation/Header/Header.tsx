@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Menu } from 'components/index';
 
-import { Logo } from 'styles';
+import { DesktopLogo, MobileLogo } from 'styles';
 import { StyledHeader, FlexWrapper } from './header.styles';
 
 const Header: React.FC = () => {
@@ -12,7 +13,10 @@ const Header: React.FC = () => {
 
   return (
     <StyledHeader>
-      <Logo />
+      <Link to={'/'}>
+        <MobileLogo />
+        <DesktopLogo />
+      </Link>
       <FlexWrapper>
         <p>Kraków, Polska</p>
         <p>+48 783 271 883</p>

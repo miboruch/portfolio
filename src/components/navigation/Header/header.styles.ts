@@ -19,12 +19,16 @@ const FlexWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-  margin-right: 380px;
+  margin-right: 320px;
   color: #fff;
   display: none;
 
   ${({ theme }) => theme.mq.tabletL} {
     display: flex;
+  }
+
+  ${({ theme }) => theme.mq.hdReady} {
+    margin-right: 380px;
   }
 `;
 
