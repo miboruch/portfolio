@@ -7,7 +7,7 @@ import { projectData } from 'static/project-data';
 import { StyledSlider } from './slider-content.styles';
 
 interface Props {
-  setCurrentProject: React.Dispatch<React.SetStateAction<number>>;
+  setProjectIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const settings: Settings = {
@@ -20,9 +20,9 @@ const settings: Settings = {
   cssEase: 'cubic-bezier(.84, 0, .08, .99)'
 };
 
-const SliderContent = React.forwardRef<Slider, Props>(({ setCurrentProject }, ref) => {
-  const beforeChange = (oldIndex: number, nextIndex: number) => setCurrentProject(nextIndex);
-  const afterChange = (currentIndex: number) => setCurrentProject(currentIndex);
+const SliderContent = React.forwardRef<Slider, Props>(({ setProjectIndex }, ref) => {
+  const beforeChange = (oldIndex: number, nextIndex: number) => setProjectIndex(nextIndex);
+  const afterChange = (currentIndex: number) => setProjectIndex(currentIndex);
 
   return (
     <StyledSlider {...settings} ref={ref} beforeChange={beforeChange} afterChange={afterChange}>

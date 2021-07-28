@@ -6,7 +6,7 @@ import SliderController from './components/SliderController/SliderController';
 import { Wrapper } from './footer.styles';
 
 interface Props {
-  currentProject: number;
+  projectIndex: number;
   handleNextSlide: () => void;
   handlePrevSlide: () => void;
 }
