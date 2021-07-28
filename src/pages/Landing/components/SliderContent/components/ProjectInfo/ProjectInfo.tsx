@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { ProjectModel } from 'types';
 
@@ -20,19 +21,24 @@ interface Props {
 }
 
 const ProjectInfo: React.FC<Props> = ({ project }) => {
+  const history = useHistory();
+
+  const projectRedirect = () => history.push(`/project/${project.id}`);
+  const allProjectsRedirect = () => history.push('/projects');
+
   return (
     <ProjectData>
       {project.image && <Image src={project.image} alt={'Image'} />}
       <Content>
         <ProjectName>{project.name}</ProjectName>
         <Description>{project.description}</Description>
-        <MobileOpenProject>Open project</MobileOpenProject>
+        <MobileOpenProject onClick={projectRedirect}>Open project</MobileOpenProject>
       </Content>
       <CenterLine />
       <Circle>
-        <OpenProject>Open project</OpenProject>
+        <OpenProject onClick={projectRedirect}>Open project</OpenProject>
       </Circle>
-      <AllProjects>All projects</AllProjects>
+      <AllProjects onClick={allProjectsRedirect}>All projects</AllProjects>
     </ProjectData>
   );
 };
