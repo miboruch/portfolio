@@ -8,25 +8,41 @@ export const projectData: ProjectModel[] = [
     name: 'Indeed',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
     period: 'September 2019',
-    image: indeed
+    image: indeed,
+    status: 'Ukończone',
+    technology: 'React, Typescript',
+    platform: 'Progressive Web App',
+    category: 'e-commerce'
   },
   {
     id: 2,
     name: 'Test 1',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    period: 'February 2021'
+    period: 'February 2021',
+    status: 'Ukończone',
+    technology: 'React, Typescript',
+    platform: 'Progressive Web App',
+    category: 'e-commerce'
   },
   {
     id: 3,
     name: 'Test 2',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    period: 'March 2021'
+    period: 'March 2021',
+    status: 'Ukończone',
+    technology: 'React, Typescript',
+    platform: 'Progressive Web App',
+    category: 'e-commerce'
   },
   {
     id: 4,
     name: 'Test 3',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    period: 'April 2021'
+    period: 'April 2021',
+    status: 'Ukończone',
+    technology: 'React, Typescript',
+    platform: 'Progressive Web App',
+    category: 'e-commerce'
   }
 ];
 

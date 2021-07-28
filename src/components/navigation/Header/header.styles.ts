@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { HeaderTheme } from 'types';
+
 const StyledHeader = styled.header`
   width: 100%;
   height: 65px;
@@ -7,7 +9,7 @@ const StyledHeader = styled.header`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0.5rem;
   right: 0.5rem;
   z-index: 16;
@@ -15,12 +17,12 @@ const StyledHeader = styled.header`
   padding-right: 2rem;
 `;
 
-const FlexWrapper = styled.div`
+const FlexWrapper = styled.div<{ colorTheme: HeaderTheme }>`
   flex-direction: row;
   align-items: center;
   gap: 2rem;
   margin-right: 320px;
-  color: #fff;
+  color: ${({ colorTheme }) => (colorTheme === 'light' ? '#fff' : '#0E0E0C')};
   display: none;
 
   ${({ theme }) => theme.mq.tabletL} {

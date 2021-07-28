@@ -3,6 +3,10 @@ export interface ProjectModel {
   name: string;
   description: string;
   period: string;
+  technology: string;
+  status: string;
+  category: string;
+  platform: string;
   image?: any;
 }
 

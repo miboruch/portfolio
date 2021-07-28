@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 import { ReactComponent as LogoIcon } from 'assets/icons/logo.svg';
 import { ReactComponent as LogoSquareIcon } from 'assets/icons/logo-square.svg';
+import { ReactComponent as LogoBlackIcon } from 'assets/icons/logo-black.svg';
+import { ReactComponent as LogoSquareBlackIcon } from 'assets/icons/logo-square-black.svg';
 import { ReactComponent as ArrowIcon } from 'assets/icons/arrow.svg';
 
 const maxLengthParagraph = (length: number) => css`
@@ -11,7 +13,7 @@ const maxLengthParagraph = (length: number) => css`
   max-width: ${length}px;
 `;
 
-const DesktopLogo = styled(LogoIcon)`
+const desktopLogo = css`
   width: 150px;
   cursor: pointer;
   display: none;
@@ -21,13 +23,30 @@ const DesktopLogo = styled(LogoIcon)`
   }
 `;
 
-const MobileLogo = styled(LogoSquareIcon)`
+const mobileLogo = css`
   width: 80px;
   display: block;
+  fill: #000;
 
   ${({ theme }) => theme.mq.tabletS} {
     display: none;
   }
+`;
+
+const DesktopLogo = styled(LogoIcon)`
+  ${desktopLogo};
+`;
+
+const DesktopBlackLogo = styled(LogoBlackIcon)`
+  ${desktopLogo};
+`;
+
+const MobileLogo = styled(LogoSquareIcon)`
+  ${mobileLogo};
+`;
+
+const MobileBlackLogo = styled(LogoSquareBlackIcon)`
+  ${mobileLogo}
 `;
 
 const Arrow = styled(ArrowIcon)`
@@ -42,4 +61,4 @@ const Arrow = styled(ArrowIcon)`
   }
 `;
 
-export { maxLengthParagraph, DesktopLogo, MobileLogo, Arrow };
+export { maxLengthParagraph, DesktopLogo, MobileLogo, DesktopBlackLogo, MobileBlackLogo, Arrow };
