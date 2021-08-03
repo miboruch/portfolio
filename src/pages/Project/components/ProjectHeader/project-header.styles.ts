@@ -5,10 +5,12 @@ const Wrapper = styled.div`
   padding: 3rem 4rem 0 4rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 
   ${({ theme }) => theme.mq.standard} {
     flex-direction: row;
     gap: 4rem;
+    margin-bottom: 5rem;
   }
 `;
 

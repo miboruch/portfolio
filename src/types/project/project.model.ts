@@ -8,6 +8,8 @@ export interface ProjectModel {
   category: string;
   platform: string;
   image?: any;
+  image2?: any;
+  image3?: any;
 }
 
 export interface ProjectImage {

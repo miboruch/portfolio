@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import ProjectHeader from './components/ProjectHeader/ProjectHeader';
+import ProjectImage from './components/ProjectImage/ProjectImage';
 import { HeaderTemplate } from 'components';
 import { projectData } from 'static/project-data';
 
@@ -17,6 +18,7 @@ const Project: React.FC = () => {
       {project && (
         <Wrapper>
           <ProjectHeader project={project} />
+          <ProjectImage image={project.image} />
         </Wrapper>
       )}
     </HeaderTemplate>
